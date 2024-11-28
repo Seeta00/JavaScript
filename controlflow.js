@@ -77,6 +77,6 @@ while(idx <= 10){    //condition
 let score = 11;  //the code is implimented atleast once even if the condition is not met
 /* do{
     console.log(`Score: ${score}`);
-    score++
+    score++ 
 }while(score<=6) */
 
