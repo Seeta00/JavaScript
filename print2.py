@@ -1,0 +1,1 @@
+print("The files are merged")
