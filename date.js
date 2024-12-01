@@ -25,7 +25,7 @@ let timeStamp = Date.now()
 //console.log(Math.floor(Date.now()/1000));
 
 
-console.log(date.toLocaleString('fr-France', {
+/* console.log(date.toLocaleString('fr-France', {
     weekday: "long",
     month: "short"
-}));
+})); */
