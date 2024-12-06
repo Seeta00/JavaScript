@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document Object Model</title>
+</head>
+<body style="background-color: rgb(21, 21, 21); color: #fff;;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent');
+    console.log(parent.children[1]);   //to get 1st index val from the class(i.e parent)
+    console.log(parent.children[1].innerHTML);  //returns val at 1st index
+    
+    //to print all the vals in parent class
+    for(let i=0; i<parent.children.length; i++){
+        console.log(parent.children[i].innerHTML);
+    }
+
+    parent.children[1].style.color = "orange"; 
+    console.log(parent.firstElementChild.innerHTML);
+    console.log(parent.lastElementChild.innerHTML);
+    
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne.innerHTML);
+    console.log(dayOne.parentElement);   //to access parent class with child element
+    console.log(dayOne.nextElementSibling.innerHTML);
+    console.log("Nodes: ", parent.childNodes);  //shows the tree structure's browser behind the scene
+    
+
+
+    //NODE LIST
+
+    const div = document.createElement('div')
+    console.log(div) 
+    div.className = "mainDiv"
+    div.id =  Math.round(Math.random()*10+1)
+    
+    div.setAttribute("title", "generated itle")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    div.innerHTML = "Used innerHTML"
+    const addTxt = document.createTextNode("  |  Using txt node")
+    div.appendChild(addTxt)
+    document.body.appendChild(div)
+    document.body.appendChild(addTxt)
+</script>
+</html>
