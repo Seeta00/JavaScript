@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h4>Languages: </h4>
+    <ul class="lang">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    // adding list objects using function and dom
+    function addlang(langName){
+        let li = document.createElement('li')
+        li.innerHTML = `${langName}`     //treversing is there
+        document.querySelector('.lang').appendChild(li);
+    }
+
+    //optimised way for the same output
+    function addoptilang(langName){
+        let li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))   //no treversing
+        document.querySelector('.lang').appendChild(li)
+    }
+    addlang("Python")
+    addlang('Java')
+    addoptilang("TypeScript")
+    addoptilang('ReactJS')
+
+
+    //Edit - replace
+    let secondlang = document.querySelector('li:nth-child(2)');
+    let newLi = document.createElement('li');
+    newLi.textContent = "Ruby";
+    secondlang.replaceWith(newLi);
+
+    //method-2
+    let firstLang = document.querySelector('li:first-child')
+    //firstLang.innerHTML = 'CSS'
+    firstLang.outerHTML = '<li>HTML</li>'
+
+    //remove
+    // let lastLang = document.querySelector('li:last-child')
+    // lastLang.remove()
+
+</script>
+</html>
