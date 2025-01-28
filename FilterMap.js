@@ -1,4 +1,5 @@
-/* forEach can't be used when we just want to return or conditionally check the function
+/* Here the function is declared in a var. 
+forEach can't be used when we just want to return or conditionally check the function
 for such purpose we use filter operation. In this operation we can return the function */
 
 const myNum = [1, 2,3 ,4 , 5, 6, 7, 8, 9]
@@ -49,6 +50,8 @@ const newNum2 = myNum
             .map((num) => num+1)
             .filter((num) => num>51)
 //console.log(newNum2);
+//NOTE: filter is used when a condition is checked for and map is used for 
+//      performing some function to the array
 
 
 // Reduce operation

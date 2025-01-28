@@ -1,4 +1,17 @@
-console.log(5 ?? 10);
-console.log(null ?? 10);
-console.log(undefined ?? 10);
-console.log(null ?? 20 ?? 10);
+const cart = [
+    {
+        course: "JS",
+        cost: 999
+    },
+    {
+        course: "Python",
+        cost: 699
+    },
+    {
+        course: "Java",
+        cost: 399
+    }
+]
+
+const val = cart.reduce(function(acc, num){ return acc + num.cost},0)
+console.log(val);

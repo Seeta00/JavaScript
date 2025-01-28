@@ -16,12 +16,12 @@ let obj = {
 //loop for array
 let arr = ["Js", "Rb", "Swift", "Ruby"]
 /* for(const i in arr){
-    //console.log(i);   //idx value default is num
+    //console.log(i);   //the vakue stroed in 'i' is by default numbers statring from 0
     console.log(arr[i]);
 } */
 
 
-//  forEach (using above array - (arr)
+//  forEach (using above array - (arr))
 /* arr.forEach(function (list){    //list is the var name being assigned to arr keys
     console.log(list);
 }) */
@@ -36,8 +36,8 @@ let arr = ["Js", "Rb", "Swift", "Ruby"]
     console.log(list);
  }
 
- arr.forEach(printList);  //"()" are not used for the function name coz we are
-                         */       // reffering to the function not executing it. 
+ arr.forEach(printList);  //"()" are not used for the function name coz we are reffering 
+                    */   // to the function not executing it. It is just a call back function 
 
 /* arr.forEach(function (x, y,arr){
     console.log(x, y, arr);     //x - keys, y - index & arr
