@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        /* Example of styling the hamburger class */
+        .hamburger {
+            width: 100%;
+            max-width: 500px; /* Limits image size */
+            display: block;
+            margin: 0 auto;
+        }
+    </style>x
+</head>
+<body style="background: #414141; color: aliceblue;">
+    <h2>Images</h2>
+
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+
+   <script>
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("Clicked inside the ul")
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked")
+    //     e.stopPropagation()  //the proccess won't continue after Event Bubbling has been done in this senario
+    // }, false)
+    /*result for false: 
+    Clicked on owl
+    Clicked inside the ul
+    result for true:
+    Clicked inside ul
+    clicked on owl*/
+    //NOTE: Event bubbling(false):-bottom to top and event capturing(true):-top to bottom. True & false are a part of event propagation
+
+    //prevent default actions
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("Google clicked");  //result in inspect console
+    // }, false)
+
+
+    //TASK - to remove the clicked images
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        //here target is the '<img> tag' and parent is '<li> tag'  
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+            
+        }
+
+        //method-2
+        //removeIt.parentNode.removeChild(removeIt)
+        //here, parentNode of removeIt is '<ul> tag' and child is '<li> tag'
+    })
+   </script>
+</body>
+</html>
